@@ -2,7 +2,6 @@ provider "aws" {
   region  = "ap-south-1"
   profile = "terraform"
 }
-
 resource "aws_vpc" "myvpc" {
   cidr_block = var.myvpccidr
   tags = {
