@@ -23,6 +23,7 @@ resource "aws_instance" "myvm" {
   ami           = var.myamiid
   instance_type = var.instance_type
   subnet_id     = aws_subnet.mysubnet.id
+  availability_zone = "ap-south-1a"
   tags = {
     Name = "TerraformInstance"
   }
