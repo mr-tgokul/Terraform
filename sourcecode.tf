@@ -15,7 +15,7 @@ resource "aws_vpc" "myvpc" {
 
 resource "aws_subnet" "mysubnet" {
   cidr_block = var.mysubnetcidr
-  vpc_id     = var.myvpc.id
+  vpc_id     = aws_vpc.myvpc.id
   depends_on = [aws_vpc.myvpc]
 }
 
