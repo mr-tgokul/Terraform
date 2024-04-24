@@ -20,9 +20,9 @@ resource "aws_subnet" "mysubnet" {
 }
 
 resource "aws_instance" "myvm" {
-  ami           = var.myamiid
-  instance_type = var.instance_type
-  subnet_id     = aws_subnet.mysubnet.id
+  ami               = var.myamiid
+  instance_type     = var.instance_type
+  subnet_id         = aws_subnet.mysubnet.id
   availability_zone = "ap-south-1a"
   tags = {
     Name = "TerraformInstance"
@@ -32,5 +32,4 @@ resource "aws_instance" "myvm" {
 
 output "myoutput" {
   value = [aws_instance.myvm.id]
-
 }
